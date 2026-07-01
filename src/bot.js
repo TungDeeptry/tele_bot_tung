@@ -1,9 +1,12 @@
 const http = require('http');
+const port = process.env.PORT || 10000;
+
 http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.write('Bot is running!');
-    res.end();
-}).listen(process.env.PORT || 8080);
+    res.end('Bot is running OK!');
+}).listen(port, '0.0.0.0', () => {
+    console.log(`[Render] Web Server đang chạy trên cổng ${port}`);
+});
 const { Telegraf, session } = require('telegraf');
 const config = require('./config');
 
