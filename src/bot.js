@@ -1,3 +1,9 @@
+const http = require('http');
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.write('Bot is running!');
+    res.end();
+}).listen(process.env.PORT || 8080);
 const { Telegraf, session } = require('telegraf');
 const config = require('./config');
 
